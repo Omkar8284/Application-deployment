@@ -8,7 +8,8 @@ A highly available, scalable 3-tier web application infrastructure deployed on A
 
 ## 📐 Architecture
 
-![3-Tier Architecture](architecture-diagram.png)
+![3-Tier Architecture](<img width="1378" height="1457" alt="Origin" src="https://github.com/user-attachments/assets/db883dc0-65f0-46a7-9cb8-2f28e167aa1e" />
+)
 
 ### Architecture Components
 
@@ -50,7 +51,9 @@ A highly available, scalable 3-tier web application infrastructure deployed on A
 
 **AWS Console** → **VPC** → **Create VPC** → **VPC and more**
 
-![VPC Configuration](screenshots/vpc-configuration.png)
+![VPC Configuration](![<img width="1259" height="704" alt="Screenshot 2025-11-09 151518" src="https://github.com/user-attachments/assets/e6d79476-3207-4a53-b1b8-353cee81cb7d" />
+]()
+)
 
 ```yaml
 Name: AquaInfra
@@ -671,3 +674,4 @@ Give a ⭐️ if this project helped you!
 ---
 
 **Built with ❤️ on AWS**
+
