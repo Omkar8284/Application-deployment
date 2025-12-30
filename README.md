@@ -1,5 +1,3 @@
-<img width="1703" height="400" alt="Screenshot 2025-11-09 153959" src="https://github.com/user-attachments/assets/ef9290f9-59fa-49c1-a12d-31da5273e754" /># 3-Tier Web Application Deployment on AWS
-
 ![AWS](https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge&logo=amazon-aws)
 ![Architecture](https://img.shields.io/badge/Architecture-3--Tier-blue?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Production-brightgreen?style=for-the-badge)
@@ -8,7 +6,6 @@ A highly available, scalable 3-tier web application infrastructure deployed on A
 
 ## 📐 Architecture
 
-![3-Tier Architecture]
 
 <img width="1378" height="1457" alt="Origin" src="https://github.com/user-attachments/assets/1212b62c-5b22-40dc-a03b-da990d279caa" />
 
@@ -53,7 +50,7 @@ A highly available, scalable 3-tier web application infrastructure deployed on A
 
 **AWS Console** → **VPC** → **Create VPC** → **VPC and more**
 
-![VPC Configuration] <img width="1259" height="704" alt="Screenshot 2025-11-09 151518" src="https://github.com/user-attachments/assets/74221b76-89d8-431d-aa60-9a499c33a632" />
+<img width="1259" height="704" alt="Screenshot 2025-11-09 151518" src="https://github.com/user-attachments/assets/74221b76-89d8-431d-aa60-9a499c33a632" />
 
 ```yaml
 Name: AquaInfra
@@ -67,7 +64,7 @@ DNS hostnames: Enabled
 DNS resolution: Enabled
 ```
 
-![VPC Resource Map]<img width="1449" height="406" alt="VPC arch" src="https://github.com/user-attachments/assets/2966908c-4a53-49da-97d0-df536ccbee80" />
+<img width="1449" height="406" alt="VPC arch" src="https://github.com/user-attachments/assets/2966908c-4a53-49da-97d0-df536ccbee80" />
 
 
 ---
@@ -78,7 +75,7 @@ Create 5 security groups for different tiers:
 
 #### 1. Web-SG (Web Tier)
 
-![Web Security Group]
+
 <img width="1680" height="649" alt="Screenshot 2025-11-09 151929" src="https://github.com/user-attachments/assets/898c9bbc-d850-4cd2-94bb-e57f1b1c3d27" />
 
 ```
@@ -92,7 +89,7 @@ Inbound Rules:
 
 #### 2. App-SG (Application Tier)
 
-![App Security Group]
+
 <img width="1664" height="582" alt="Screenshot 2025-11-09 152105" src="https://github.com/user-attachments/assets/64f1a1a5-48f7-43c0-83a6-18564153db1b" />
 
 
@@ -109,7 +106,7 @@ Inbound Rules:
 #### 3. database-SG (Database Tier)
 
 
-![Database Security Group](
+
 <img width="1683" height="603" alt="Screenshot 2025-11-09 152137" src="https://github.com/user-attachments/assets/754b1071-eeff-44ad-9350-f1c330ec8d86" />
 
 
@@ -123,7 +120,6 @@ Inbound Rules:
 
 #### 4. Internal-ALB-SG
 
-![Internal ALB Security Group]
 <img width="1677" height="657" alt="Screenshot 2025-11-09 152004" src="https://github.com/user-attachments/assets/936687e3-e809-4655-a95a-0795e9f271f7" />
 
 
@@ -136,8 +132,7 @@ Inbound Rules:
 ```
 
 #### 5. External-ALB-SG
-
-![External ALB Security Group]<img width="1706" height="693" alt="Screenshot 2025-11-09 151844" src="https://github.com/user-attachments/assets/1b8a4bc4-d473-4131-8936-f7ee4d84e81b" />
+<img width="1706" height="693" alt="Screenshot 2025-11-09 151844" src="https://github.com/user-attachments/assets/1b8a4bc4-d473-4131-8936-f7ee4d84e81b" />
 
 
 ```
@@ -149,7 +144,8 @@ Inbound Rules:
 - HTTPS (443) from 0.0.0.0/0
 ```
 
-![All Security Groups]
+<img width="1607" height="410" alt="SG" src="https://github.com/user-attachments/assets/c090445c-1dd9-481d-9f93-0ded3b886171" />
+
 
 ---
 
@@ -237,15 +233,16 @@ Initial database: webappdb
 
 ---
 
-### Step 6: App Tier and Web Tier - Launch Template & Target Group
+### Step 6: App Tier  - Launch Template & Target Group
 
 #### Create Launch Template
 
-![App Launch Template](screenshots/app-launch-template.png)
+<img width="1073" height="573" alt="Screenshot 2025-11-09 155805" src="https://github.com/user-attachments/assets/28f5a95e-7dc7-4838-9070-09bc4fdd27ea" />
+
 
 ```
 Name: App-tier and Web-tier
-AMI: 
+AMI: The AMI was created from a fully configured EC2 instance with the application already deployed and validated.
 Instance type: t2.micro
 Security group: App-SG
 IAM role: AquaInfra-EC2-Role
@@ -253,7 +250,9 @@ IAM role: AquaInfra-EC2-Role
 
 #### Create Target Group
 
-![App Target Group](screenshots/app-target-group.png)
+<img width="1376" height="283" alt="Screenshot 2025-11-09 160455" src="https://github.com/user-attachments/assets/7a1cd43b-02af-426e-a573-8b3de12d1b76" />
+
+
 
 ```
 Name: App-TG
@@ -267,7 +266,8 @@ Health check path: /health
 
 ### Step 7: Create Internal Load Balancer
 
-![Internal ALB](screenshots/internal-alb.png)
+<img width="1688" height="280" alt="Screenshot 2025-11-09 162924" src="https://github.com/user-attachments/assets/e2724bca-29ce-47ac-b9cb-a8c0ef99f593" />
+
 
 ```
 Name: App-ALB
@@ -284,11 +284,12 @@ Listener: HTTP:80 → App-TG
 
 #### Create Launch Template
 
-![Web Launch Template](screenshots/web-launch-template.png)
+<img width="1077" height="517" alt="Screenshot 2025-11-09 161427" src="https://github.com/user-attachments/assets/aa00a595-8d9a-43e1-96a8-2c5b0d1cbee6" />
+
 
 ```
 Name: Web-tier-LT
-AMI: Amazon Linux 2023
+AMI: The AMI was created from a fully configured EC2 instance with the application already deployed and validated.
 Instance type: t2.micro
 Security group: Web-SG
 IAM role: AquaInfra-EC2-Role
@@ -296,7 +297,8 @@ IAM role: AquaInfra-EC2-Role
 
 #### Create Target Group
 
-![Web Target Group](screenshots/web-target-group.png)
+<img width="1394" height="290" alt="Screenshot 2025-11-09 162030" src="https://github.com/user-attachments/assets/d84aa68a-3a65-4c99-9b6e-fd11861cca08" />
+
 
 ```
 Name: Web-TG
@@ -310,7 +312,8 @@ Health check path: /
 
 ### Step 9: Create External Load Balancer
 
-![External ALB](screenshots/external-alb.png)
+<img width="1688" height="280" alt="Screenshot 2025-11-09 162924" src="https://github.com/user-attachments/assets/7d3b8ff3-a3a7-4b4e-92c6-f47f4d1e1af7" />
+
 
 ```
 Name: Web-ALB
@@ -327,7 +330,8 @@ Listener: HTTP:80 → Web-TG
 
 ### Step 10: Create Auto Scaling Group - Web Tier
 
-![Web ASG](screenshots/web-asg.png)
+<img width="1641" height="247" alt="Screenshot 2025-11-09 163006" src="https://github.com/user-attachments/assets/45a5e8f1-6337-4743-b1ce-e9a5ca8ad1d6" />
+
 
 ```yaml
 Name: Web-ASG
@@ -347,7 +351,8 @@ Tag: Name = Web-Server
 
 ### Step 11: Create Auto Scaling Group - App Tier
 
-![App ASG](screenshots/app-asg.png)
+<img width="1641" height="247" alt="Screenshot 2025-11-09 163006" src="https://github.com/user-attachments/assets/37da7010-dfbb-4126-971b-0a791d5714ff" />
+
 
 ```yaml
 Name: App-ASG
@@ -363,7 +368,8 @@ Scaling policy: Target tracking - CPU 50%
 Tag: Name = App-Server
 ```
 
-![App ASG Running](screenshots/app-asg-running.png)
+<img width="1672" height="316" alt="Screenshot 2025-11-09 162847" src="https://github.com/user-attachments/assets/37079cf0-43c3-468b-87fb-061e077d3893" />
+
 
 ---
 
@@ -373,7 +379,8 @@ Tag: Name = App-Server
 
 Connect via **Session Manager**:
 
-![Session Manager](screenshots/session-manager.png)
+<img width="1674" height="404" alt="Screenshot 2025-11-09 154312" src="https://github.com/user-attachments/assets/e8f19129-8010-490e-9df2-c5065aee825f" />
+
 
 ```bash
 # Install Node.js
@@ -416,7 +423,8 @@ curl http://localhost:4000/health
 pm2 status
 ```
 
-![PM2 Status](screenshots/pm2-status.png)
+<img width="1377" height="227" alt="Pm2" src="https://github.com/user-attachments/assets/f1a650c9-1434-4937-b038-682da025820d" />
+
 
 ---
 
@@ -478,7 +486,8 @@ server {
 }
 ```
 
-![Nginx Status](screenshots/nginx-status.png)
+<img width="1394" height="380" alt="image" src="https://github.com/user-attachments/assets/5eb39df8-6fd4-4ff7-b63f-1b1b46150454" />
+
 
 ---
 
@@ -490,7 +499,8 @@ server {
 mysql -h mydb.xxxxxxxx.ap-south-1.rds.amazonaws.com -u admin -p
 ```
 
-![MySQL Connected](screenshots/mysql-connected.png)
+<img width="1060" height="361" alt="image" src="https://github.com/user-attachments/assets/e9263818-a93b-4521-a72b-d73027af7e66" />
+
 
 ### 2. Application Health Check
 
@@ -503,7 +513,7 @@ pm2 status
 
 ### 3. Target Group Health
 
-Check both target groups are healthy:
+Check that both target groups are healthy:
 
 ![App TG Healthy](screenshots/app-tg-healthy.png)
 ![Web TG Healthy](screenshots/web-tg-healthy.png)
@@ -686,6 +696,7 @@ Give a ⭐️ if this project helped you!
 ---
 
 **Built with ❤️ on AWS**
+
 
 
 
