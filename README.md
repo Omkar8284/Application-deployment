@@ -509,20 +509,16 @@ curl http://localhost:4000/health
 pm2 status
 ```
 
-![App Health](screenshots/app-health.png)
+<img width="766" height="201" alt="image" src="https://github.com/user-attachments/assets/6c76be50-1bef-4a1b-99f6-d7c7a5a4a2c6" />
 
-### 3. Target Group Health
 
-Check that both target groups are healthy:
 
-![App TG Healthy](screenshots/app-tg-healthy.png)
-![Web TG Healthy](screenshots/web-tg-healthy.png)
-
-### 4. End-to-End Test
+### 3. End-to-End Test
 
 Access application: `http://Web-ALB-xxxxx.ap-south-1.elb.amazonaws.com`
 
-![Application Working](screenshots/app-working.png)
+<img width="1441" height="415" alt="image" src="https://github.com/user-attachments/assets/a0e2cbd3-55e2-4671-a766-d8ae62350c21" />
+
 
 ---
 
@@ -696,6 +692,7 @@ Give a ⭐️ if this project helped you!
 ---
 
 **Built with ❤️ on AWS**
+
 
 
 
