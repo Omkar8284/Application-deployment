@@ -10,6 +10,8 @@ A highly available, scalable 3-tier web application infrastructure deployed on A
 
 ![3-Tier Architecture](<img width="1378" height="1457" alt="Origin" src="https://github.com/user-attachments/assets/db883dc0-65f0-46a7-9cb8-2f28e167aa1e" />
 )
+<img width="1378" height="1457" alt="Origin" src="https://github.com/user-attachments/assets/1212b62c-5b22-40dc-a03b-da990d279caa" />
+
 
 ### Architecture Components
 
