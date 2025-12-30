@@ -1,4 +1,4 @@
-# 3-Tier Web Application Deployment on AWS
+<img width="1703" height="400" alt="Screenshot 2025-11-09 153959" src="https://github.com/user-attachments/assets/ef9290f9-59fa-49c1-a12d-31da5273e754" /># 3-Tier Web Application Deployment on AWS
 
 ![AWS](https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge&logo=amazon-aws)
 ![Architecture](https://img.shields.io/badge/Architecture-3--Tier-blue?style=for-the-badge)
@@ -78,8 +78,8 @@ Create 5 security groups for different tiers:
 
 #### 1. Web-SG (Web Tier)
 
-![Web Security Group](<img width="1680" height="649" alt="Screenshot 2025-11-09 151929" src="https://github.com/user-attachments/assets/76b8e16f-3139-4600-b476-fa706ea36934" />
-)
+![Web Security Group]
+<img width="1680" height="649" alt="Screenshot 2025-11-09 151929" src="https://github.com/user-attachments/assets/898c9bbc-d850-4cd2-94bb-e57f1b1c3d27" />
 
 ```
 Name: Web-SG
@@ -92,7 +92,9 @@ Inbound Rules:
 
 #### 2. App-SG (Application Tier)
 
-![App Security Group](screenshots/app-sg.png)
+![App Security Group]
+<img width="1664" height="582" alt="Screenshot 2025-11-09 152105" src="https://github.com/user-attachments/assets/64f1a1a5-48f7-43c0-83a6-18564153db1b" />
+
 
 ```
 Name: App-SG
@@ -106,7 +108,10 @@ Inbound Rules:
 
 #### 3. database-SG (Database Tier)
 
-![Database Security Group](screenshots/database-sg.png)
+
+![Database Security Group](
+<img width="1683" height="603" alt="Screenshot 2025-11-09 152137" src="https://github.com/user-attachments/assets/754b1071-eeff-44ad-9350-f1c330ec8d86" />
+
 
 ```
 Name: database-SG
@@ -118,7 +123,9 @@ Inbound Rules:
 
 #### 4. Internal-ALB-SG
 
-![Internal ALB Security Group](screenshots/internal-alb-sg.png)
+![Internal ALB Security Group]
+<img width="1677" height="657" alt="Screenshot 2025-11-09 152004" src="https://github.com/user-attachments/assets/936687e3-e809-4655-a95a-0795e9f271f7" />
+
 
 ```
 Name: Internal-ALB-SG
@@ -130,7 +137,8 @@ Inbound Rules:
 
 #### 5. External-ALB-SG
 
-![External ALB Security Group](screenshots/external-alb-sg.png)
+![External ALB Security Group]<img width="1706" height="693" alt="Screenshot 2025-11-09 151844" src="https://github.com/user-attachments/assets/1b8a4bc4-d473-4131-8936-f7ee4d84e81b" />
+
 
 ```
 Name: External-ALB-SG
@@ -141,13 +149,12 @@ Inbound Rules:
 - HTTPS (443) from 0.0.0.0/0
 ```
 
-![All Security Groups](screenshots/all-security-groups.png)
+![All Security Groups]
 
 ---
 
 ### Step 3: Create S3 Bucket
 
-![S3 Bucket](screenshots/s3-bucket.png)
 
 ```
 Bucket name: aquainfra-app-code
@@ -172,13 +179,13 @@ aquainfra-app-code/
     └── nginx.conf
 ```
 
-![S3 Folder Structure](screenshots/s3-folders.png)
+
 
 ---
 
 ### Step 4: Create IAM Role
 
-![IAM Role](screenshots/iam-role.png)
+<img width="1357" height="195" alt="Screenshot 2025-11-09 152601" src="https://github.com/user-attachments/assets/a35fb35b-0b13-448a-801a-9b1b34ea9674" />
 
 ```
 Role name: AquaInfra-EC2-Role
@@ -195,7 +202,8 @@ Attached Policies:
 
 #### Create DB Subnet Group
 
-![DB Subnet Group](screenshots/db-subnet-group.png)
+<img width="1354" height="215" alt="Screenshot 2025-11-09 152945" src="https://github.com/user-attachments/assets/abb246bf-7e09-4125-b969-33a8152a3a80" />
+
 
 ```
 Name: aquainfra-db-subnet-group
@@ -205,7 +213,8 @@ Subnets: Both private database subnets
 
 #### Create Database
 
-![RDS Configuration](screenshots/rds-configuration.png)
+<img width="1703" height="400" alt="Screenshot 2025-11-09 153959" src="https://github.com/user-attachments/assets/60db5fcf-a493-4340-aeb4-1d00f468b78c" />
+
 
 ```yaml
 Engine: MySQL 8.0
@@ -221,21 +230,22 @@ Security group: database-SG
 Initial database: webappdb
 ```
 
-![RDS Endpoint](screenshots/rds-endpoint.png)
+<img width="1320" height="370" alt="Screenshot 2025-11-09 154034" src="https://github.com/user-attachments/assets/67da42d1-3487-42a1-aa30-2e7418d9269f" />
+
 
 **Save the endpoint:** `mydb.xxxxxxxx.ap-south-1.rds.amazonaws.com`
 
 ---
 
-### Step 6: App Tier - Launch Template & Target Group
+### Step 6: App Tier and Web Tier - Launch Template & Target Group
 
 #### Create Launch Template
 
 ![App Launch Template](screenshots/app-launch-template.png)
 
 ```
-Name: App-tier-LT
-AMI: Amazon Linux 2023
+Name: App-tier and Web-tier
+AMI: 
 Instance type: t2.micro
 Security group: App-SG
 IAM role: AquaInfra-EC2-Role
