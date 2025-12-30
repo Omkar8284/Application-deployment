@@ -539,48 +539,6 @@ Access application: `http://Web-ALB-xxxxx.ap-south-1.elb.amazonaws.com`
 
 ---
 
-## 🧹 Cleanup
-
-To delete all resources and avoid charges:
-
-```bash
-# 1. Set ASG desired capacity to 0
-aws autoscaling update-auto-scaling-group --auto-scaling-group-name Web-ASG --desired-capacity 0
-aws autoscaling update-auto-scaling-group --auto-scaling-group-name App-ASG --desired-capacity 0
-
-# Wait 2-3 minutes for instances to terminate
-
-# 2. Delete Auto Scaling Groups
-aws autoscaling delete-auto-scaling-group --auto-scaling-group-name Web-ASG --force-delete
-aws autoscaling delete-auto-scaling-group --auto-scaling-group-name App-ASG --force-delete
-
-# 3. Delete Load Balancers
-# Via AWS Console: EC2 → Load Balancers → Delete Web-ALB and App-ALB
-
-# 4. Delete Target Groups
-# Via AWS Console: EC2 → Target Groups → Delete Web-TG and App-TG
-
-# 5. Delete RDS Database
-# Via AWS Console: RDS → Databases → Delete mydb (uncheck final snapshot)
-
-# 6. Delete Launch Templates, Security Groups, NAT Gateway, VPC
-# Via AWS Console in order
-```
-
-**Or use AWS Console:**
-1. Auto Scaling Groups (set capacity to 0, then delete)
-2. Load Balancers
-3. Target Groups  
-4. RDS Database
-5. Launch Templates
-6. Security Groups
-7. NAT Gateway (wait 5 min, release EIP)
-8. VPC (auto-deletes subnets, IGW, route tables)
-9. S3 Bucket (empty first)
-10. IAM Role
-
----
-
 ## 🛠️ Technologies Used
 
 - **Cloud Provider**: AWS
@@ -624,74 +582,9 @@ aws autoscaling delete-auto-scaling-group --auto-scaling-group-name App-ASG --fo
 
 ---
 
-## 🔐 Security Features
 
-- ✅ Multi-layered security groups
-- ✅ Database in private subnets (no internet access)
-- ✅ Session Manager (no SSH keys required)
-- ✅ IAM roles (no hardcoded credentials)
-- ✅ S3 bucket encryption
-- ✅ RDS encryption at rest
-- ✅ Private subnets for app and database tiers
-- ✅ Security group rules follow least privilege
 
----
 
-## 🚀 Scalability Features
-
-- ✅ Auto Scaling based on CPU utilization
-- ✅ Multi-AZ deployment for high availability
-- ✅ Load balancers distribute traffic
-- ✅ RDS Multi-AZ for database failover
-- ✅ Horizontal scaling (2-4 instances per tier)
-- ✅ Independent scaling per tier
-
----
-
-## 📈 Monitoring
-
-- **EC2 Metrics**: CPU, Network, Disk I/O
-- **ALB Metrics**: Request count, latency, HTTP responses
-- **RDS Metrics**: CPU, connections, storage, IOPS
-- **Target Health**: ALB health checks
-- **ASG Activity**: Scaling events and instance launches
-
----
-
-## 🤝 Contributing
-
-Feel free to fork this repository and submit pull requests for improvements.
-
----
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
----
-
-## 👤 Author
-
-**Omkar Kale**
-
-- GitHub: [@Omkar8284](https://github.com/Omkar8284)
-- LinkedIn: [Connect with me](https://linkedin.com/in/your-profile)
-
----
-
-## 📞 Support
-
-For questions or issues, please open an issue in this repository.
-
----
-
-## ⭐ Show Your Support
-
-Give a ⭐️ if this project helped you!
-
----
-
-**Built with ❤️ on AWS**
 
 
 
