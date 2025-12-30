@@ -78,7 +78,8 @@ Create 5 security groups for different tiers:
 
 #### 1. Web-SG (Web Tier)
 
-![Web Security Group](screenshots/web-sg.png)
+![Web Security Group](<img width="1680" height="649" alt="Screenshot 2025-11-09 151929" src="https://github.com/user-attachments/assets/76b8e16f-3139-4600-b476-fa706ea36934" />
+)
 
 ```
 Name: Web-SG
@@ -675,6 +676,7 @@ Give a ⭐️ if this project helped you!
 ---
 
 **Built with ❤️ on AWS**
+
 
 
 
