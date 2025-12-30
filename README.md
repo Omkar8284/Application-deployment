@@ -8,8 +8,8 @@ A highly available, scalable 3-tier web application infrastructure deployed on A
 
 ## 📐 Architecture
 
-![3-Tier Architecture](<img width="1378" height="1457" alt="Origin" src="https://github.com/user-attachments/assets/db883dc0-65f0-46a7-9cb8-2f28e167aa1e" />
-)
+![3-Tier Architecture]
+
 <img width="1378" height="1457" alt="Origin" src="https://github.com/user-attachments/assets/1212b62c-5b22-40dc-a03b-da990d279caa" />
 
 
@@ -53,9 +53,7 @@ A highly available, scalable 3-tier web application infrastructure deployed on A
 
 **AWS Console** → **VPC** → **Create VPC** → **VPC and more**
 
-![VPC Configuration](![<img width="1259" height="704" alt="Screenshot 2025-11-09 151518" src="https://github.com/user-attachments/assets/e6d79476-3207-4a53-b1b8-353cee81cb7d" />
-]()
-)
+![VPC Configuration] <img width="1259" height="704" alt="Screenshot 2025-11-09 151518" src="https://github.com/user-attachments/assets/74221b76-89d8-431d-aa60-9a499c33a632" />
 
 ```yaml
 Name: AquaInfra
@@ -69,7 +67,8 @@ DNS hostnames: Enabled
 DNS resolution: Enabled
 ```
 
-![VPC Resource Map](screenshots/vpc-resource-map.png)
+![VPC Resource Map](<img width="1449" height="406" alt="VPC arch" src="https://github.com/user-attachments/assets/ff9a98e3-e35c-4a81-a025-c06d0eba51e5" />
+)
 
 ---
 
@@ -676,4 +675,5 @@ Give a ⭐️ if this project helped you!
 ---
 
 **Built with ❤️ on AWS**
+
 
