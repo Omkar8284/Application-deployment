@@ -67,8 +67,8 @@ DNS hostnames: Enabled
 DNS resolution: Enabled
 ```
 
-![VPC Resource Map](<img width="1449" height="406" alt="VPC arch" src="https://github.com/user-attachments/assets/ff9a98e3-e35c-4a81-a025-c06d0eba51e5" />
-)
+![VPC Resource Map]<img width="1449" height="406" alt="VPC arch" src="https://github.com/user-attachments/assets/2966908c-4a53-49da-97d0-df536ccbee80" />
+
 
 ---
 
@@ -675,5 +675,6 @@ Give a ⭐️ if this project helped you!
 ---
 
 **Built with ❤️ on AWS**
+
 
 
